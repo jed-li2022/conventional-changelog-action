@@ -1102,12 +1102,14 @@ jobs:
           EXPECTED_TAG: "v1.5.0"
         with:
           github-token: ${{ secrets.github_token }}
-          version-file: "test-file-pre-release.json"
-          pre-release: false
+          version-file: "test-file.json"
           git-path: |
             src/helpers
             src/version
             .github/workflows
+          skip-commit: 'true'
+          skip-tag: 'true'
+          release-count: 0
           create-summary: 'true'
 
       - name: Test output
