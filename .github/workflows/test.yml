@@ -1108,9 +1108,6 @@ jobs:
             src/helpers
             src/version
             .github/workflows
-          skip-commit: 'true'
-          skip-tag: 'true'
-          release-count: 0
           create-summary: 'true'
 
       - name: Test output
