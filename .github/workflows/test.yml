@@ -1090,15 +1090,20 @@ jobs:
       - run: npm ci --prod
       - run: npm run build
 
+      - run: "git config --global user.email 'changelog@github.com'"
+      - run: "git config --global user.name 'Awesome Github action'"
+      - run: "git add . && git commit --allow-empty -m 'feat: Added fake file so version will be bumped'"
 
       - name: Generate changelog
         id: changelog
         uses: ./
         env:
           ENV: "dont-use-git"
-          EXPECTED_TAG: "v6.5.0"
+          EXPECTED_TAG: "v1.5.0"
         with:
           github-token: ${{ secrets.github_token }}
+          version-file: "test-file-pre-release.json"
+          pre-release: false
           git-path: |
             src/helpers
             src/version
