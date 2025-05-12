@@ -6,12 +6,11 @@ on:
 
 jobs:
   test:
-    runs-on: example-runnerdeploy-m8cqb-rwl6d
+    runs-on: [self-hosted, Linux, X64]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           path: "./"
 
-      - run: npm ci --prod
-      - run: npm run build
+      - run: echo "hello"
