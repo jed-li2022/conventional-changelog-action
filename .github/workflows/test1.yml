@@ -1,0 +1,17 @@
+name: "Test the action"
+on:
+  push:
+    branches:
+      - jedi-test
+
+jobs:
+  test:
+    runs-on: example-runnerdeploy
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          path: "./"
+
+      - run: npm ci --prod
+      - run: npm run build
