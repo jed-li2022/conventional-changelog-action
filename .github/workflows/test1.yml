@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: example-runnerdeploy
+    runs-on: example-runnerdeploy-m8cqb-rwl6d
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
